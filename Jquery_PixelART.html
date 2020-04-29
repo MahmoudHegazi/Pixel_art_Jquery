@@ -4,9 +4,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <style>
+table {
+  border-collapse: collapse;
+}
 table td {
    border: 2px solid gray;
-   padding: 5px;
+   padding: 5px;   
+   border-collapse: sperate;
 }
 
 </style>
@@ -31,12 +35,15 @@ function draw(x, y) {
    for (var i=0; i <= x; i++) {
    $('#mytable').append('<tr id="row' + i + '"></tr>');
    /*alert(x);*/
-   for (var col=0; col <= y; col++) {
-    $('#row' + i).append('<td></td>');
+     for (var col=0; col <= y; col++) {
+     $('#row' + i).append('<td></td>');
+     }  
    }
+   $('td').click(function(event) {
+     event.target.style.backgroundColor = "blue";
    
-   
-   }
+   });
+
 }
 </script>
 </head>
@@ -53,3 +60,4 @@ function draw(x, y) {
 
 </body>
 </html>
+
