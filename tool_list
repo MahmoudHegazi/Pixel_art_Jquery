@@ -3,6 +3,12 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* this for animation Important */
+@keyframes mymove {
+  from {bottom: 0px;}
+  to {top: 100px;}
+}
+
 body {margin:0;}
 
 .navbar {
