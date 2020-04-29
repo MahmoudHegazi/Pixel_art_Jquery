@@ -19,7 +19,7 @@ table td {
 var height; 
 var width;
 var getTable;
-
+var getMode;
 
 var getColor;
 $(document).ready(function(){
@@ -43,12 +43,33 @@ function draw(x, y) {
      $('#row' + i).append('<td></td>');
      }  
    }
-   $('td').click(function(event) {
-     getColor = $('#mycolor').val();
-     event.target.style.backgroundColor = getColor;
-   
-   });
 
+    
+ function get_mode() {
+   
+    getMode = $('#mode').val();
+   
+   if (getMode === "click") {
+   $('td').click(function(event) {
+   getColor = $('#mycolor').val();
+     event.target.style.backgroundColor = getColor;
+
+    
+   });
+   
+  
+   }
+   if (getMode === "mousemove") {
+   $('td').mousemove(function(event) {
+   getColor = $('#mycolor').val();
+   event.target.style.backgroundColor = getColor;
+
+    
+   });      
+   }
+ }
+  get_mode();
+  $('#mode').change(get_mode);
 }
 </script>
 </head>
@@ -62,11 +83,17 @@ function draw(x, y) {
   <input id="mheight"  type="number" name="theight" value="1" min="1" max="99"><br>
   <label for="twdith">Table Width</label>
   <input id="mwidth" type="number" name="twdith" value="1" min="1" max="99"><br>
-  <label for="twdith">Cell Color</label>
+  <label for="color">Cell Color</label>
   <input id="mycolor" type="color" name="color" value="#eecc22"><br>
+    <label for="mmode">Select Mode</label>
+    <select id="mode">
+    <option value="click">Click Mode</option>
+    <option value="mousemove">Move Mode</option>
+    </select>
   <input type="submit" value="Submit">
 </form> 
 
 </body>
 </html>
 
+</html>
