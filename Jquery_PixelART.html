@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+table td {
+   border: 2px solid gray;
+   padding: 5px;
+}
+
+</style>
+<script>
+var height; 
+var width;
+var getTable; 
+$(document).ready(function(){
+  $("form").submit(function(event){
+    event.preventDefault();
+    height = $('#mheight').val();
+    width = $('#mwidth').val();
+    /* console.log(height + width); */
+    draw(height, width);
+  });
+});
+
+function draw(x, y) {
+   /* alert('height: ' + x + 'width: ' + y); */
+   $('tr').remove();   
+   /*alert($('#mytable')); */
+   for (var i=0; i <= x; i++) {
+   $('#mytable').append('<tr id="row' + i + '"></tr>');
+   /*alert(x);*/
+   for (var col=0; col <= y; col++) {
+    $('#row' + i).append('<td></td>');
+   }
+   
+   
+   }
+}
+</script>
+</head>
+<body>
+
+<table id="mytable">
+
+</table>
+<form action="">
+  First name: <input id="mheight"  type="number" name="FirstName" value="Mickey"><br>
+  Last name: <input id="mwidth" type="number" name="LastName" value="Mouse"><br>
+  <input type="submit" value="Submit">
+</form> 
+
+</body>
+</html>
