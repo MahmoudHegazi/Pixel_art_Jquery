@@ -4,11 +4,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 /* this for animation Important */
+div#animation {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 1s infinite;
+  animation-timing-function: linear;
+}
+
+
 @keyframes mymove {
   from {bottom: 0px;}
   to {top: 100px;}
 }
 
+/* end of animation */
 body {margin:0;}
 
 .navbar {
@@ -57,6 +68,7 @@ body {margin:0;}
 </div>
 
 <div class="main">
+<div id="animation"></div>
 </div>
 
 </body>
