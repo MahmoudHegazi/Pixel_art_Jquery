@@ -36,10 +36,10 @@ function draw(x, y) {
    /* alert('height: ' + x + 'width: ' + y); */
    $('tr').remove();   
    /*alert($('#mytable')); */
-   for (var i=0; i <= x; i++) {
+   for (var i=0; i < x; i++) {
    $('#mytable').append('<tr id="row' + i + '"></tr>');
    /*alert(x);*/
-     for (var col=0; col <= y; col++) {
+     for (var col=0; col < y; col++) {
      $('#row' + i).append('<td></td>');
      }  
    }
